@@ -1,7 +1,6 @@
 val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 plugins {
-    //id("me.choicore.conventions.base-java")
     id("me.choicore.conventions.base-kotlin")
 }
 

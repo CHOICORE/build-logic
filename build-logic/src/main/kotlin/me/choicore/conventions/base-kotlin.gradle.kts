@@ -24,10 +24,7 @@ kotlin {
             kotlin.srcDir("src/test/kotlin")
         }
     }
-
 }
-
-
 
 tasks {
     withType<KotlinCompile> {
@@ -51,5 +48,4 @@ tasks {
          */
         jvmTargetValidationMode.set(WARNING)
     }
-
 }
