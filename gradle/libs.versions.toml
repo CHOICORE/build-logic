@@ -1,9 +1,11 @@
 [versions]
+
+jdk = "17"
 kotlin = "1.9.0"
 spring_boot = "3.1.1"
 spring_io_dependency_management = "1.1.0"
 
-# test
+## test
 junit = "5.9.3"
 assertj = "3.24.2"
 
@@ -11,24 +13,27 @@ assertj = "3.24.2"
 kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 spring_boot = { id = "org.springframework.boot", version.ref = "spring_boot" }
 kotlin_spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
-kotlin_dsl = { id = "org.gradle.kotlin.dsl", version = "1.8.2" }
 
 
 kotlin_jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
 spring_io_dependency_management = { id = "io.spring.dependency-management", version.ref = "spring_io_dependency_management" }
 
 [libraries]
-kotlin_reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
-kotlin_stdlib_jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+## gradle plugin
+gradlePlugin_kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
-# test
+## kotlin
+#kotlin_reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+#kotlin_stdlib_jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+
+## test
 junit_jupiter_engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
 junit_jupiter_api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit_jupiter_params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit" }
 assertj_core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
 [bundles]
 
-# test
+## test
 junit = [
     "junit_jupiter_api",
     "junit_jupiter_params",
