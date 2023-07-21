@@ -13,17 +13,18 @@ assertj = "3.24.2"
 kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 spring_boot = { id = "org.springframework.boot", version.ref = "spring_boot" }
 kotlin_spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
-
-
 kotlin_jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
 spring_io_dependency_management = { id = "io.spring.dependency-management", version.ref = "spring_io_dependency_management" }
 
 [libraries]
 ## gradle plugin
+gradlePlugin_springBoot = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring_boot" }
 gradlePlugin_kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
 ## kotlin
-#kotlin_reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin_noarg = { module = "org.jetbrains.kotlin:kotlin-noarg", version.ref = "kotlin" }
+kotlin_reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin_allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
 #kotlin_stdlib_jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
 
 ## test

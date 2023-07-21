@@ -1,4 +1,4 @@
-package me.choicore.conventions
+package me.choicore.conventions.bases
 
 plugins {
     base

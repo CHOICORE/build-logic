@@ -1,10 +1,14 @@
 plugins {
     `kotlin-dsl`
 }
-
-group = "me.choicore.conventions"
-version = "0.0.1"
+repositories {
+    mavenCentral()
+}
 
 dependencies {
+    implementation(libs.gradlePlugin.springBoot)
     implementation(libs.gradlePlugin.kotlin)
+    implementation(libs.kotlin.reflect)
+    implementation(libs.kotlin.allopen)
+    implementation(libs.kotlin.noarg)
 }

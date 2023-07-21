@@ -1,4 +1,4 @@
-package me.choicore.conventions
+package me.choicore.conventions.bases
 
 import org.jetbrains.kotlin.gradle.dsl.jvm.JvmTargetValidationMode.WARNING
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -7,7 +7,7 @@ val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().name
 val jdk = libs.findVersion("jdk").get()
 
 plugins {
-    id("me.choicore.conventions.base-java")
+    id("me.choicore.conventions.bases.base-java")
     kotlin("jvm")
 }
 
@@ -30,14 +30,9 @@ tasks {
     withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs = listOf(
-                "-opt-in=kotlin.RequiresOptIn",
-                "-opt-in=org.jetbrains.dokka.InternalDokkaApi",
                 "-Xjsr305=strict",
-                "-Xskip-metadata-version-check",
-                "-Xsuppress-version-warnings",
             )
             jvmTarget = "$jdk"
-
         }
         /**
          * error – the plugin fails the build; the default value for projects on Gradle 8.0+.
