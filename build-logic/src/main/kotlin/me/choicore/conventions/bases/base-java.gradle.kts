@@ -1,10 +1,13 @@
 package me.choicore.conventions.bases
 
+import me.choicore.CheckstyleUtil
+
 val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 plugins {
     id("me.choicore.conventions.bases.base")
     java
+    checkstyle
 }
 
 java {
@@ -22,4 +25,21 @@ java {
      * Adds a task javadocJar that will package the output of the javadoc task in a JAR with classifier javadoc.
      */
     withJavadocJar()
+}
+
+checkstyle {
+    config = resources.text.fromString(CheckstyleUtil.getCheckstyleConfig("/checkstyle.xml"))
+    maxWarnings = 0
+}
+
+/**
+ * Enable deprecation messages when compiling Java code
+ */
+tasks {
+    withType<JavaCompile>().configureEach {
+        options.compilerArgs.add("-Xlint:deprecation")
+    }
+    withType<Checkstyle> {
+        enabled = true
+    }
 }
